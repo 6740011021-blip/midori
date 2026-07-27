@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2026 at 11:39 AM
+-- Generation Time: Jul 27, 2026 at 05:01 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -29,10 +29,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `senser-logs` (
   `logsID` int(11) NOT NULL,
-  `maisture` int(3) NOT NULL,
+  `moisture` int(3) NOT NULL,
   `status` varchar(50) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `senser-logs`
+--
+
+INSERT INTO `senser-logs` (`logsID`, `moisture`, `status`, `created_at`) VALUES
+(1, 25, 'Dry - Need Water', '2026-07-27 01:00:00'),
+(2, 45, 'Optimal', '2026-07-27 01:05:00'),
+(3, 70, 'Moist', '2026-07-27 02:00:00'),
+(4, 20, 'Dry - Need Water', '2026-07-27 05:00:00'),
+(5, 65, 'Optimal', '2026-07-27 05:05:00');
 
 -- --------------------------------------------------------
 
@@ -73,7 +84,7 @@ ALTER TABLE `wetering_history`
 -- AUTO_INCREMENT for table `senser-logs`
 --
 ALTER TABLE `senser-logs`
-  MODIFY `logsID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `logsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `wetering_history`
